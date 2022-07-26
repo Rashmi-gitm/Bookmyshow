@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './login.css';
 
 const Login = (props) => {
-  const{onLoginSubmit, goToSignup, loginMessage, errorMessageLogin} = props;
+  const{ onLoginSubmit, goToSignup, loginMessage, errorMessageLogin} = props;
   const [userId, setUserId] = useState("");
     const [password, setPassword] = useState("");
    
@@ -44,20 +44,25 @@ const Login = (props) => {
            />
     </div>
     <div className='input-group'>
-    <input type="submit" className='form-control m-1 btn btn-primary'
-     value="Log In" />
+    <input type="submit" 
+    className='form-control m-1 btn btn-success'
+     value="Log In" 
+     />
     </div>
-    <div> Don't have an account? <a href='#' onClick={goToSignup}>
+    <div> Don't have an account? 
+    <a href='#' onClick={goToSignup}>
     Sign Up!
     </a>
    </div>
-   <div className='error-msg text-danger m-1'> {errorMessageLogin}</div>
-   <div className='text-success m-1'> {loginMessage}</div>
     </form>
+    <div className='error-msg text-danger m-1'> 
+        {errorMessageLogin}
+    </div>
+   <div className='text-success m-1'> {loginMessage}</div>
     </div>
   </div>
     
-  )
-}
+  );
+};
 
 export default Login;

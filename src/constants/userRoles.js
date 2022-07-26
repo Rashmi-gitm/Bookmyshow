@@ -1,5 +1,5 @@
-export const ROLES ={
+export const ROLES = {
     CUSTOMER: "CUSTOMER",
     CLIENT: "CLIENT",
-    ADMIN: "ADMIN"
+    ADMIN: "ADMIN",
 };

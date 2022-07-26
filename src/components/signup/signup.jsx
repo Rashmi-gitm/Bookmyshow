@@ -5,6 +5,7 @@ import './signup.css'
 
 const Signup = (props) => {
   const{onSignupSubmit, goToLogin, errorMessageSignup} = props;
+
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
@@ -18,7 +19,7 @@ const Signup = (props) => {
       //2. call the onLoginSubmit with data
       //3. e. prevent default to prevent submit
 
-    const data = { userId, password, userName, email, userType};
+    const data = { userId, password, name: userName, email, userType};
       onSignupSubmit(data);
       e.preventDefault();
   }
@@ -89,11 +90,11 @@ const Signup = (props) => {
       }}
       variant= 'light'
       >
-      <Dropdown.Item eventKey= 
-          {ROLES.CUSTOMER}>
+      <Dropdown.Item eventKey={ROLES.CUSTOMER}> 
+          {ROLES.CUSTOMER}
         </Dropdown.Item>
-      <Dropdown.Item eventKey=
-          {ROLES.CLIENT}>
+      <Dropdown.Item eventKey={ROLES.CLIENT}>
+          {ROLES.CLIENT}
       </Dropdown.Item>
    </DropdownButton>
 </div>
@@ -101,7 +102,9 @@ const Signup = (props) => {
     <div className='input-group'>
     <input 
         type="submit" 
-        className='form-control m-1 btn btn-primary' value="Create"/>
+        className='form-control m-1 btn btn-primary' 
+        value="Create"
+        />
     </div>
     <div className='input-group'>
           Already have an Account? 
@@ -109,11 +112,13 @@ const Signup = (props) => {
               Log In!
           </a>
           </div>
-   <div className='error-msg text-danger m-2'> {errorMessageSignup}</div>
-  </form>
+     </form>
+     <div className='error-msg text-danger m-1'> 
+   {errorMessageSignup}
+   </div>
   </div>
 </div>
   )
 }
 
-export default Signup
+export default Signup;
